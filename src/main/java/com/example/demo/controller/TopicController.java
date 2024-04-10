@@ -17,7 +17,7 @@ public class TopicController {
     private final TopicService topicService;
 
     @PostMapping
-    public void saveGroup(@RequestBody Topic topic) {
+    public void saveTopic(@RequestBody Topic topic) {
         topic.setCreated(Instant.now());
         topicService.saveTopic(topic);
     }

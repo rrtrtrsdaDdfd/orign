@@ -14,13 +14,13 @@ public class RestResponseExceptionHandler {
     @ExceptionHandler(value = {TopicNotFoundException.class})
     protected ResponseEntity<ErrorDTO> handleTopicNotFoundException() {
         return ResponseEntity
-                .status(404)
+                .status(400)
                 .body(new ErrorDTO(400, "Данного топика не существует"));
     }
     @ExceptionHandler(value = {MessageNotFoundException.class})
     protected ResponseEntity<ErrorDTO> handleMassageNotFoundException() {
         return ResponseEntity
-                .status(404)
+                .status(400)
                 .body(new ErrorDTO(400, "Данного сообщения не существует"));
     }
 }
